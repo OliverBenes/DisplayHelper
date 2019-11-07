@@ -33,7 +33,12 @@ namespace Grading
             grades[7] = new Grade() { Subject = "MAT", Score = 2 };
             grades[8] = new Grade() { Subject = "MAT", Score = 2 };
 
-            
+            GradeAvg mat = new GradeAvg("MAT");
+            GradeAvg cjl = new GradeAvg("CJL");
+            GradeAvg prg = new GradeAvg("PRG");
+            mat.GetAverage();
+            cjl.GetAverage();
+            prg.GetAverage();
             ConsoleKeyInfo result;
             do
             {

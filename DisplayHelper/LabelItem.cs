@@ -22,7 +22,7 @@ namespace DisplayHelper
 
         public string Value
         {
-            get { return _value.ToString(); }
+            get { return _value?.ToString(); }
         }
 
         public override string ToString()

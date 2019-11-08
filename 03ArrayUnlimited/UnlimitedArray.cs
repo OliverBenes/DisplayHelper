@@ -14,6 +14,24 @@ namespace ArrayUnlimited
             _array = new object[GROW];
         }
 
+        public static UnlimitedArray operator +(UnlimitedArray first, UnlimitedArray second)
+        {
+
+        }
+
+        public object this[int index]
+        {
+            get
+            {
+                return Get(index);
+            }
+            set
+            {
+                Delete(index);
+                Insert(value, index);
+            }
+        }
+
         public int Count
         {
             get

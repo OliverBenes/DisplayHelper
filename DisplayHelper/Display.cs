@@ -31,17 +31,17 @@ namespace DisplayHelper
                 Proportion.Height = _array.Count + 2 * (PADDING + BORDER);
             }
         }
-
+        
         public void Refresh()
         {
             RepaintBorder();
 
             object[] data = _array.GetAll();
-            for (int y = 0; y < data.Length; y++)
+            for (int y = 0; y < _array.Length; y++)
             {
                 Console.SetCursorPosition(Proportion.TopLeft.X + (PADDING + BORDER), Proportion.TopLeft.Y + y + (PADDING + BORDER));
-                if (((LabelItem)data[y]).Value == null) Console.Write(addCenteredPadding(data[y].ToString())); //explicit typing issue
-                else Console.Write(data[y]);
+                if (((LabelItem)_array[y]).Value == null) Console.Write(addCenteredPadding(_array[y].ToString())); //explicit typing issue
+                else Console.Write(_array[y]);
             }
         }
 
@@ -55,9 +55,9 @@ namespace DisplayHelper
         public void RepaintBorder()
         {
             Console.SetCursorPosition(Proportion.TopLeft.X, Proportion.TopLeft.Y);
-            Console.Write("+");
+            Console.Write("–");
             for (int i = 0; i < Proportion.Width - 2*BORDER; i++) { Console.Write("-"); }
-            Console.Write("+");
+            Console.Write("–");
 
             for (int j = 0; j < Proportion.Height - BORDER; j++)
             {
@@ -68,9 +68,9 @@ namespace DisplayHelper
             }
 
             Console.SetCursorPosition(Proportion.TopLeft.X, Proportion.TopLeft.Y + Proportion.Height - 1);
-            Console.Write("+");
+            Console.Write("–");
             for (int i = 0; i < Proportion.Width - 2*BORDER; i++) { Console.Write("-"); }
-            Console.Write("+");
+            Console.Write("–");
         }
     }
 }

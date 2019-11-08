@@ -3,11 +3,13 @@ using DisplayHelper;
 
 namespace Grading
 {
- 
+
     class Program
     {
         static void Main(string[] args)
+
         {
+
             CertificateTable table = new CertificateTable();
 
             Display displayGrading = new Display(new Proportion() { Width = 40, TopLeft = new System.Drawing.Point(20, 3) });
@@ -48,7 +50,7 @@ namespace Grading
                 temp = Console.ReadLine();
                 displayInput2.Refresh();
                 int.TryParse(Console.ReadLine(), out grade);
-                if (temp.Length == 3 && grade < 6 && grade > 0) table.AddGrade(new Grade() { Score = grade, Subject = temp });
+                if (temp.Length == 5 && grade < 5 && grade > 0) table.AddGrade(new Grade() { Score = grade, Subject = temp });
 
                 displayConfirm.Refresh();
                 result = Console.ReadKey();
